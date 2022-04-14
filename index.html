@@ -44,7 +44,7 @@
 			init();
 			// setController();
 			animate();
-			setEnv(0);
+			setEnv(envOrder);
 
 			function init() {
 
@@ -175,6 +175,15 @@
 				}
 
 			}
+
+			$(window).mousedown(function(){
+				envOrder++;
+				if(envOrder > envTextureFiles.length - 1){
+					envOrder = 0;
+				}
+
+				setEnv(envOrder)
+			})
 
 			$(window).keydown(function(e){
 				// console.log(e.keyCode);
