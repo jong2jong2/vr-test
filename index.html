@@ -148,6 +148,13 @@
 
 			function onSelectEnd(e) {
 				// console.log(e.data)
+
+				envOrder++;
+				if(envOrder > envTextureFiles.length - 1){
+					envOrder = 0;
+				}
+
+				setEnv(envOrder)
 			}
 
 			function buildController( data ) {
